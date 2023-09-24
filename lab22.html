@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html> 
+<body> 
+<div style="text-align:center"> 
+ <button id = "btnPlayPause" 
+onclick="playPause()">Play</button> 
+ <button onclick="makeBig()">Big</button>
+ <button onclick="makeSmall()">Small</button>
+ <button onclick="makeNormal()">Normal</button>
+ <button id = "btnMuteUnmute" 
+ onclick="mute()">Mute</button>
+  <br><br>
+
+  <video id="video1" width="420">
+    <source src="web.mp4" type="video/mp4">
+   
+    </video>
+   </div>
+
+   <script> 
+    var myVideo = document.getElementById("video1"); 
+    var btnPlay = 
+    document.getElementById("btnPlayPause");
+    var btnMute = 
+    document.getElementById("btnMuteUnmute");
+
+    function playPause() { 
+ if (myVideo.paused) {
+ myVideo.play();
+btnPlay.innerHTML = "Pause";
+ } 
+ else {
+ myVideo.pause();
+btnPlay.innerHTML = "Play";
+ }
+}
+
+function makeBig() { 
+ myVideo.width = 600;
+ myVideo.height = 450; 
+} 
+function makeSmall() { 
+ myVideo.width = 300; 
+ myVideo.height = 225; 
+} 
+function makeNormal() { 
+ myVideo.width = 400; 
+ myVideo.height = 300; 
+
+}
+
+
+function mute() { 
+ myVideo.muted = !myVideo.muted;
+if (myVideo.muted)
+btnMute.innerHTML = "Unmute";
+else
+btnMute.innerHTML = "Mute";
+} 
+</script> 
+</body> 
+</html>
